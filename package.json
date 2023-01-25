@@ -1,0 +1,22 @@
+{
+  "name": "google-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/",
+    "test": "jest --no-cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^8.0.0"
+  },
+  "jest": {
+    "testRegex": ".spec.js$"
+  },
+  "devDependencies": {
+    "jest": "^29.4.0"
+  }
+}
