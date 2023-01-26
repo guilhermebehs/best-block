@@ -14,35 +14,32 @@ class DistanceCalculator{
         const currentBlock = this.blocks[blockIndex]
         
         if(currentBlock[place] === true) return 0
-       
-        while(true){
-    
+
+        for(let i = forwardIndex, y = backwardIndex; i < this.blocks.length && y >= 0; i++, y++){
+             
             if(backwardIndex >= 0){
-              const nextBlock = this.blocks[backwardIndex]  
-              if(!foundBackward && nextBlock[place] === true)
-                 foundBackward = true
-              else
-                 backwardIndex--  
+               const nextBlock = this.blocks[backwardIndex]  
+               if(!foundBackward && nextBlock[place] === true)
+                  foundBackward = true
             }
             
             if(forwardIndex < this.blocks.length){
-              const nextBlock = this.blocks[forwardIndex]  
-              if(!foundForward && nextBlock[place] === true)
-                 foundForward = true
-              else
-                 forwardIndex++  
+               const nextBlock = this.blocks[forwardIndex]  
+               if(!foundForward && nextBlock[place] === true)
+                  foundForward = true
             }
             
-             if(foundForward === true)
-                return forwardIndex - blockIndex;
-             else if(foundBackward === true)   
-                return blockIndex - backwardIndex
-             if(forwardIndex === this.blocks.length && backwardIndex === -1)
-                return this.blocks.length
-    
+            if(foundForward === true)
+               return forwardIndex - blockIndex;
+            else if(foundBackward === true)   
+               return blockIndex - backwardIndex
+  
         }
-    
+
+        return this.blocks.length
+            
     }
+       
 
 }
  
